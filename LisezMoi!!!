@@ -1,0 +1,104 @@
+
+
+
+
+
+/*************	Pour le répertoire " rev5_Afficher_LABX_matrice_Leds_lignes.MARCHE.pde " :	***********	*/
+		Je viens de le réessayer dans l'IDE arduino, il compile, donc ça doit passer
+
+
+Il y a peut être une grosse amélioration à faire, passer par un registre à décalage plutot que d'utiliser 7 ou 8 pattes de l'arduino pour commander les lignes, en utiliser simplement 2 pour commander un registre à décalage qui sera dédié à la commande des lignes de l'afficheur. Ce système serait aussi utile pour le led pong, ça évite de se retrouver limité dans la hauteur de l'afficheur. 
+
+
+/*************	Pour le répertoire " /Essai_retranscrire_char_dans_LedMatrix _MARCHE_08.08 " :	***********	*/
+		Simplement se mettre dans le répertoire , et tapper:
+			~/ $ gcc -std=c99 *.c -o test
+
+		ça fait un exécutable './test' qui fonctionne
+
+
+/*************	Pour le répertoire " Afficheur_Autobus_LABX_2012.07.31 " :	***********	*/
+
+C'est là que c'est le problème!!!
+C'est normalement l'équivalent du répertoire précédent, 
+dans lequel les fichiers 'affichage_dans_shell.c' et  'affichage_dans_shell.h'
+
+sont remplacés par une version épurée de " rev5_Afficher_LABX_matrice_Leds_lignes.MARCHE.pde ",
+
+" rev6_Afficher_LABX_matrice_Leds_lignes..pde "
+
+Normalment en copiant tous les headers et tout les fichiers c avant le sketch, et en supprimant toutes les mentions à des includes dans le code, de manière à n'avoir qu'un seul fichier, ça doit passer et encore je suis plus vraiment sûr que ça passe.
+
+Par contre j'ai jamais su compiler un sketch découpé en plusieurs fichiers, normalmeent c'est simple en faisant un gcc avec dans le répertoire le fichier objet de la librairie arduino '/tmp/build801043939680465949.tmp/core.a' qui est produit à chaque compilation d'un sketch, qu'il est possible de voire en mettant les options de compilation de l'IDE à verbose dans /file/preferences.
+
+C'est ce qui m'a empếché de continuer à développer le traitement des chaînes de caractère, c'est qu'à partir de 5 fichiers j'arrivait plus à éditer un fichier .pde unique qui compile.
+
+Bref si vous arrivez à le faire, vous pouvez passer théoriquement passer une chaîne de caractère dans l'afficheur. 
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Extrait de ce qui s'écrit dans la console avec l'option verbose:
+
+
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /tmp/build801043939680465949.tmp/sketch_mar18a.cpp -o /tmp/build801043939680465949.tmp/sketch_mar18a.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-gcc -c -g -Os -Wall -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/malloc.c -o /tmp/build801043939680465949.tmp/malloc.c.o 
+/opt/arduino-1.0.4/hardware/arduino/cores/arduino/malloc.c:67: warning: initialization makes pointer from integer without a cast
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-gcc -c -g -Os -Wall -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/wiring.c -o /tmp/build801043939680465949.tmp/wiring.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-gcc -c -g -Os -Wall -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/WInterrupts.c -o /tmp/build801043939680465949.tmp/WInterrupts.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-gcc -c -g -Os -Wall -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/wiring_digital.c -o /tmp/build801043939680465949.tmp/wiring_digital.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-gcc -c -g -Os -Wall -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/wiring_pulse.c -o /tmp/build801043939680465949.tmp/wiring_pulse.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-gcc -c -g -Os -Wall -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/wiring_shift.c -o /tmp/build801043939680465949.tmp/wiring_shift.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-gcc -c -g -Os -Wall -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/wiring_analog.c -o /tmp/build801043939680465949.tmp/wiring_analog.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/Print.cpp -o /tmp/build801043939680465949.tmp/Print.cpp.o 
+/opt/arduino-1.0.4/hardware/arduino/cores/arduino/Print.cpp: In member function ‘size_t Print::print(const __FlashStringHelper*)’:
+/opt/arduino-1.0.4/hardware/arduino/cores/arduino/Print.cpp:44: warning: ‘__progmem__’ attribute ignored
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/IPAddress.cpp -o /tmp/build801043939680465949.tmp/IPAddress.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/HID.cpp -o /tmp/build801043939680465949.tmp/HID.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/CDC.cpp -o /tmp/build801043939680465949.tmp/CDC.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/WString.cpp -o /tmp/build801043939680465949.tmp/WString.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/new.cpp -o /tmp/build801043939680465949.tmp/new.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/Tone.cpp -o /tmp/build801043939680465949.tmp/Tone.cpp.o 
+/opt/arduino-1.0.4/hardware/arduino/cores/arduino/Tone.cpp:119: warning: only initialized variables can be placed into program memory area
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/USBCore.cpp -o /tmp/build801043939680465949.tmp/USBCore.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/main.cpp -o /tmp/build801043939680465949.tmp/main.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/HardwareSerial.cpp -o /tmp/build801043939680465949.tmp/HardwareSerial.cpp.o 
+/opt/arduino-1.0.4/hardware/arduino/cores/arduino/HardwareSerial.cpp: In function ‘void store_char(unsigned char, ring_buffer*)’:
+/opt/arduino-1.0.4/hardware/arduino/cores/arduino/HardwareSerial.cpp:98: warning: comparison between signed and unsigned integer expressions
+/opt/arduino-1.0.4/hardware/arduino/cores/arduino/HardwareSerial.cpp: In function ‘void __vector_18()’:
+/opt/arduino-1.0.4/hardware/arduino/cores/arduino/HardwareSerial.cpp:132: warning: unused variable ‘c’
+/opt/arduino-1.0.4/hardware/arduino/cores/arduino/HardwareSerial.cpp: In member function ‘void HardwareSerial::begin(long unsigned int, byte)’:
+/opt/arduino-1.0.4/hardware/arduino/cores/arduino/HardwareSerial.cpp:379: warning: unused variable ‘current_config’
+/opt/arduino-1.0.4/hardware/arduino/cores/arduino/HardwareSerial.cpp: In member function ‘virtual size_t HardwareSerial::write(uint8_t)’:
+/opt/arduino-1.0.4/hardware/arduino/cores/arduino/HardwareSerial.cpp:478: warning: comparison between signed and unsigned integer expressions
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/WMath.cpp -o /tmp/build801043939680465949.tmp/WMath.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-g++ -c -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -MMD -DUSB_VID=null -DUSB_PID=null -DARDUINO=104 -I/opt/arduino-1.0.4/hardware/arduino/cores/arduino -I/opt/arduino-1.0.4/hardware/arduino/variants/standard /opt/arduino-1.0.4/hardware/arduino/cores/arduino/Stream.cpp -o /tmp/build801043939680465949.tmp/Stream.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/malloc.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/wiring.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/WInterrupts.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/wiring_digital.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/wiring_pulse.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/wiring_shift.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/wiring_analog.c.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/Print.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/IPAddress.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/HID.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/CDC.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/WString.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/new.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/Tone.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/USBCore.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/main.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/HardwareSerial.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/WMath.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-ar rcs /tmp/build801043939680465949.tmp/core.a /tmp/build801043939680465949.tmp/Stream.cpp.o 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-gcc -Os -Wl,--gc-sections -mmcu=atmega328p -o /tmp/build801043939680465949.tmp/sketch_mar18a.cpp.elf /tmp/build801043939680465949.tmp/sketch_mar18a.cpp.o /tmp/build801043939680465949.tmp/core.a -L/tmp/build801043939680465949.tmp -lm 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-objcopy -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0 /tmp/build801043939680465949.tmp/sketch_mar18a.cpp.elf /tmp/build801043939680465949.tmp/sketch_mar18a.cpp.eep 
+/opt/arduino-1.0.4/hardware/tools/avr/bin/avr-objcopy -O ihex -R .eeprom /tmp/build801043939680465949.tmp/sketch_mar18a.cpp.elf /tmp/build801043939680465949.tmp/sketch_mar18a.cpp.hex 
+Binary sketch size: 1,518 bytes (of a 32,256 byte maximum)
+
