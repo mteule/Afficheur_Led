@@ -1,0 +1,8 @@
+- Voir comment regrouper les fichiers d'affichage dans un même dossier
+	-> dans 'tests': tests et init_matrice (<- ?)  (les fonctions init_labx sont utilisées simplement à but de test)
+	-> dans 'affichage': convert, affichage et dimensions afficheur
+
+- Savoir s'il faut que init_matrice() renvoie un pointeur (constant?) vers la matrice crée (en static?).
+- utiliser les matrices en notes pour la transcription de matrices
+- il  reste un problème de warning pour le format, lorsque que l'on printf le pointeur vers un char.
+- projet: orange et vert pomme, défilement simultané
