@@ -16,7 +16,7 @@ void test_bit_is_set()
 	printf( "byte: ");
 	ecrire_byte(byte);
 	printf( "\nfor i=0 -> 7: ecrire_byte:");
-	printf( "\n(on commence donc par la droite)");
+	printf( "\n(on commence donc par la droite)\n");
 	for (uint8_t i=0; i<8; i++)
 	{
 		printf( "\n");
@@ -63,13 +63,12 @@ void test_transcr_case()
 		case_vertcl,
 		case_horiz
 	);
-	
 	for (uint8_t i=0; i<NB_LIGN; i++)
 	{
 		printf( "\n");
 		ecrire_byte(case_horiz[i]);
 	}
-	printf( "\nça passe enfin!\n\n");
+	printf( "\nça passe!\n\n");
 }
 
 void test_transcr_mtr()

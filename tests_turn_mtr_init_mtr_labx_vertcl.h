@@ -2,6 +2,7 @@
 #define INIT_MAT_VERT_H
 
 #include "1_dim_afficheur.h"
+
 #include <inttypes.h>
 #include <string.h>
 

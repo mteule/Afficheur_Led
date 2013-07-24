@@ -9,11 +9,11 @@ uint8_t bit_n_is_set
 	// On compte à partir du bit de poids faible
 	uint8_t filtre = 1;
 	filtre = filtre << n;
-	
 	return (byte & filtre)>0;
 }
 
 uint8_t ligne
+// TODO: rendre plus explicite
 (
 	uint8_t * case_vertcl,
 	uint8_t n
@@ -33,12 +33,13 @@ void transcr_case
 	uint8_t case_horiz[NB_LIGN]
 )
 {
-	uint8_t case_ligne[NB_LIGN]={0};
+	uint8_t case_horiz_tmp[NB_LIGN]={0};
 	for (uint8_t i=0; i<NB_LIGN; i++)
+	// On commence par la colonne de droite
 	{
-		case_ligne[i]=(ligne(case_vertcl, i));
+		case_horiz_tmp[i]=(ligne(case_vertcl, i));
 	}
-	memcpy(case_horiz, case_ligne, NB_LIGN);
+	memcpy(case_horiz, case_horiz_tmp, NB_LIGN);
 }
 
 void turn_mtr

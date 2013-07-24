@@ -9,11 +9,8 @@ void test_all_affichage()
 
 void test_convert_byte_to_str ()
 {
+	printf("Test de la fonction convert_byte_to_str(unite <<i) \n");
 	uint8_t  unite = 1;
-
-	printf(
-		"Test de la fonction convert_byte_to_str(unite <<i) \n"
-		)		;
 	for (int i=0 ; i<8 ; i++)
 	{
 		printf("%s\n", convert_byte_to_str(unite <<i));
@@ -23,15 +20,15 @@ void test_convert_byte_to_str ()
 
 void test_init_matrice()
 {
-	printf( "Test de init_matrice( matrice_affichable)");
+	printf( "Test de init_matrice(matrice_affichable)");
 	printf( "\n...\n\n");
 	
 	uint8_t matrice_affichable[NB_CASES][NB_LIGN] = {0};
-	init_matrice( matrice_affichable);
-	printf( "ça passe!\n\n");
+	init_matrice(matrice_affichable);
+	printf( "\nça passe!\n\n");
 }
 
-// TODOS: ecrire_byte et ecrire_ligne
+// TODOS: tests ecrire_byte et ecrire_ligne
 
 void test_affichage()
 {
