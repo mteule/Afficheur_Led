@@ -1,4 +1,4 @@
-#include "init_mtr_labx.h"
+#include "tests_affichage_init_mtr_labx.h"
 
 void init_matrice
 (

@@ -1,7 +1,7 @@
 #ifndef INIT_MAT_H
 #define INIT_MAT_H
 
-#include "dim_afficheur.h"
+#include "1_dim_afficheur.h"
 #include <inttypes.h>
 
 void init_matrice

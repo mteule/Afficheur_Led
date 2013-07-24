@@ -4,9 +4,11 @@
  * 
  * */
  
-#include "tests.h"
+#include "tests_affichage.h"
+#include "tests_turn_mtr.h"
 
 void main()
 {
-	test_all();
+	test_all_affichage();
+	test_all_turn_mtr();
 }

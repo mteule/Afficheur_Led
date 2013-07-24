@@ -1,6 +1,6 @@
 #include <inttypes.h>	// uint8_t
 #include <string.h>
-#include "dim_afficheur.h"
+#include "1_dim_afficheur.h"
 
 uint8_t bit_n_is_set
 ( 

@@ -1,7 +1,7 @@
 #ifndef INIT_MAT_VERT_H
 #define INIT_MAT_VERT_H
 
-#include "dim_afficheur.h"
+#include "1_dim_afficheur.h"
 #include <inttypes.h>
 #include <string.h>
 

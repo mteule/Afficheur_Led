@@ -7,7 +7,7 @@
 #include <stdio.h>		// printf()
 #include <string.h>		// strcat()
 
-#include "dim_afficheur.h"
+#include "1_dim_afficheur.h"
 
 //******DECLARATION_FONCTIONS**************************************	*
 const char *convert_byte_to_str(uint8_t x);

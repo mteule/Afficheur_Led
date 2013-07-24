@@ -1,5 +1,4 @@
-#include "init_mtr_labx_vertcl.h"
-#include <inttypes.h>
+#include "tests_turn_mtr_init_mtr_labx_vertcl.h"
 
 void init_case_vert(uint8_t mtr[LARGEUR_CASE]) 
 {
