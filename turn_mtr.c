@@ -27,15 +27,32 @@ uint8_t ligne
 	return ligne;
 }
 	
-const uint8_t * transcr
+void transcr_case
 (
-	uint8_t case_vertcl[LARGEUR_CASE]
+	uint8_t case_vertcl[LARGEUR_CASE],
+	uint8_t case_horiz[NB_LIGN]
 )
 {
-	static uint8_t case_[NB_LIGN]={0};
+	uint8_t case_ligne[NB_LIGN]={0};
 	for (uint8_t i=0; i<NB_LIGN; i++)
 	{
-		case_[i]=(ligne(case_vertcl, i));
+		case_ligne[i]=(ligne(case_vertcl, i));
 	}
-	return case_;
+	memcpy(case_horiz, case_ligne, NB_LIGN);
+}
+
+void turn_mtr
+(
+	uint8_t matrice_affichable[NB_CASES][NB_LIGN],
+	uint8_t mtr_vertcl[LARGEUR_CASE * NB_CASES]
+)
+{
+	for (uint8_t i=0; i<NB_CASES; i++)
+	{
+		transcr_case
+		(
+		&mtr_vertcl[LARGEUR_CASE * i],
+		&matrice_affichable[i][0]
+		);
+	}
 }

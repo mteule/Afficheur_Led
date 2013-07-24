@@ -6,5 +6,6 @@
 #include <string.h>
 
 void init_case_vert(uint8_t mtr[LARGEUR_CASE]);
+void init_mtr_labx_vert(uint8_t mtr[LARGEUR_CASE * NB_CASES]);
 
 #endif
