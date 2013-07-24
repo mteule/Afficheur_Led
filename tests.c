@@ -9,8 +9,8 @@ void test_all()
 	// tourner une case:
 	test_bit_is_set();
 	test_init_case_vert();
-//	test_ligne();
-//	test_transcr();
+	test_ligne();
+	test_transcr();
 };
 
 void test_convert_byte_to_str ()
@@ -77,7 +77,7 @@ void test_init_case_vert()
 	}
 	printf( "\nça passe!\n\n");
 }
-/*
+
 void test_ligne()
 {
 	printf( "test_ligne():\n");
@@ -106,4 +106,4 @@ void test_transcr()
 	}
 	printf( "\nça passe plus!\n\n");
 }
-*/
+

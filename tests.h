@@ -13,8 +13,7 @@ void test_init_matrice();
 void test_affichage();
 void test_bit_is_set();
 void test_init_case_vert();
-/*
 void test_ligne();
 void test_transcr();
-*/
+
 #endif
