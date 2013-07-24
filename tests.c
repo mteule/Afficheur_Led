@@ -9,8 +9,8 @@ void test_all()
 	// tourner une case:
 	test_bit_is_set();
 	test_init_case_vert();
-	test_ligne();
-	test_transcr();
+//	test_ligne();
+//	test_transcr();
 };
 
 void test_convert_byte_to_str ()
@@ -68,7 +68,8 @@ void test_bit_is_set()
 void test_init_case_vert()
 {
 	printf( "test_init_case_vert():\n");
-	uint8_t * mtr = init_case_vert();
+	uint8_t mtr[LARGEUR_CASE]={0};
+	init_case_vert(mtr);
 	for (uint8_t i=0; i<8; i++)
 	{
 		printf( "\n");
@@ -76,11 +77,12 @@ void test_init_case_vert()
 	}
 	printf( "\nça passe!\n\n");
 }
-
+/*
 void test_ligne()
 {
 	printf( "test_ligne():\n");
-	uint8_t * mtr = init_case_vert();
+	uint8_t mtr[LARGEUR_CASE]={0};
+	init_case_vert(mtr);
 	for (uint8_t i=0; i<NB_LIGN; i++)
 	{
 		printf( "\n");
@@ -92,7 +94,8 @@ void test_ligne()
 void test_transcr()
 {
 	printf( "test_transcr():\n");
-	uint8_t * mtr = init_case_vert();
+	uint8_t mtr[LARGEUR_CASE]={0};
+	init_case_vert(mtr);
 	uint8_t case_[NB_LIGN];
 	*case_ = transcr(mtr);
 	
@@ -103,3 +106,4 @@ void test_transcr()
 	}
 	printf( "\nça passe plus!\n\n");
 }
+*/

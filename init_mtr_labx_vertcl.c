@@ -1,10 +1,9 @@
 #include "init_mtr_labx_vertcl.h"
 #include <inttypes.h>
 
-const uint8_t * init_case_vert() 
+void init_case_vert(uint8_t mtr[LARGEUR_CASE]) 
 {
-	static uint8_t mtr[LARGEUR_CASE]=
-	{
+	uint8_t mtr_LA[LARGEUR_CASE] = {
 	0x7F,
 	0x40,
 	0x40,
@@ -14,6 +13,6 @@ const uint8_t * init_case_vert()
 	0x09,
 	0x7F
 	};
-	return mtr;
+	memcpy(mtr, mtr_LA, 8);
 }
 

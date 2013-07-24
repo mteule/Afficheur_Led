@@ -3,7 +3,8 @@
 
 #include "dim_afficheur.h"
 #include <inttypes.h>
+#include <string.h>
 
-const uint8_t * init_case_vert();
+void init_case_vert(uint8_t mtr[LARGEUR_CASE]);
 
 #endif
