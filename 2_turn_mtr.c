@@ -27,33 +27,37 @@ uint8_t ligne
 	return ligne;
 }
 	
-void transcr_case
+void transcr_ligne
 (
-	uint8_t case_vertcl[LARGEUR_CASE],
-	uint8_t case_horiz[NB_LIGN]
+	uint8_t mtr_vertcl[LARGEUR_CASE * NB_CASES],
+	uint8_t lign_horiz[NB_CASES],
+	uint8_t num_ligne
 )
 {
-	uint8_t case_horiz_tmp[NB_LIGN]={0};
-	for (uint8_t i=0; i<NB_LIGN; i++)
-	// On commence par la colonne de droite
+	uint8_t lign_horiz_tmp[NB_CASES]={0};
+	uint8_t * curseur;
+	for (uint8_t i=0; i<NB_CASES; i++)
+	// On commence par la case de gauche
 	{
-		case_horiz_tmp[i]=(ligne(case_vertcl, i));
+		curseur = mtr_vertcl + i*LARGEUR_CASE;
+		lign_horiz_tmp[i] = ligne(curseur, num_ligne);
 	}
-	memcpy(case_horiz, case_horiz_tmp, NB_LIGN);
+	memcpy(lign_horiz, lign_horiz_tmp, NB_CASES);
 }
 
 void turn_mtr
 (
-	uint8_t matrice_affichable[NB_CASES][NB_LIGN],
+	uint8_t matrice_affichable[NB_LIGN][NB_CASES],
 	uint8_t mtr_vertcl[LARGEUR_CASE * NB_CASES]
 )
 {
-	for (uint8_t i=0; i<NB_CASES; i++)
+	for (uint8_t i=0; i<NB_LIGN; i++)
 	{
-		transcr_case
+		transcr_ligne
 		(
-		&mtr_vertcl[LARGEUR_CASE * i],
-		&matrice_affichable[i][0]
+		&mtr_vertcl[0],
+		&matrice_affichable[i][0],
+		i
 		);
 	}
 }

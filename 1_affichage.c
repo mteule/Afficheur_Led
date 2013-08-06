@@ -27,18 +27,18 @@ void ecrire_byte
 void ecrire_ligne
 (
 	uint8_t numligne, 
-	uint8_t matrice_affichable[NB_CASES][NB_LIGN]
+	uint8_t matrice_affichable[NB_LIGN][NB_CASES]
 )
 {
 	for (uint8_t i =0; i <NB_CASES; i++)
 	{
-		ecrire_byte(matrice_affichable[i][numligne]);
+		ecrire_byte(matrice_affichable[numligne][i]);
 	}
 }
 
 void affichage
 (
-	uint8_t matrice_affichable[NB_CASES][NB_LIGN]
+	uint8_t matrice_affichable[NB_LIGN][NB_CASES]
 )
 {
 	for (uint8_t i =0; i <NB_LIGN; i++)

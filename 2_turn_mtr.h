@@ -31,6 +31,6 @@ void transcr_case
 
 void turn_mtr
 (
-	uint8_t matrice_affichable[NB_CASES][NB_LIGN],
+	uint8_t matrice_affichable[NB_LIGN][NB_CASES],
 	uint8_t mtr_vertcl[LARGEUR_CASE * NB_CASES]
 );

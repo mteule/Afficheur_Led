@@ -14,7 +14,7 @@ void test_affichage();
 
 void init_matrice
 (
-	uint8_t matrice_affichable[NB_CASES][NB_LIGN]
+	uint8_t matrice_affichable[NB_LIGN][NB_CASES]
 );
 
 #endif

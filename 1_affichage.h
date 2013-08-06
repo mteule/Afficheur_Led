@@ -20,12 +20,12 @@ void ecrire_byte
 void ecrire_ligne
 (
 	uint8_t numligne, 
-	uint8_t matrice_affichable[NB_CASES][NB_LIGN]
+	uint8_t matrice_affichable[NB_LIGN][NB_CASES]
 );
 
 void affichage
 (
-	uint8_t matrice_affichable[NB_CASES][NB_LIGN]
+	uint8_t matrice_affichable[NB_LIGN][NB_CASES]
 );
 
 #endif
