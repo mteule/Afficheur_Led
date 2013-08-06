@@ -3,8 +3,13 @@
 
 #include "1_affichage.h"
 #include "2_turn_mtr.h"
-#include "tests_affichage_init_mtr_labx.h"
-#include "tests_turn_mtr_init_mtr_labx_vertcl.h"
+#include "1_dim_afficheur.h"
+
+#include <inttypes.h>
+#include <string.h>
+
+void init_case_vert(uint8_t mtr[LARGEUR_CASE]);
+void init_mtr_labx_vert(uint8_t mtr[LARGEUR_CASE * NB_CASES]);
 
 void test_all_turn_mtr();
 
