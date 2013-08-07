@@ -1,0 +1,13 @@
+####### Ledmatrix #######
+https://github.com/hugokernel/203LedMatrix
+Le code qui a été présenté dans Open Silicium où les caractères sont convertis en cinq uint8_t (font5x7).
+Par contre lui n'utilise pas l'I2C, il utilise les ports PORTB, PORTC et PORTD.
+Le projet est codé en C, il n'utilise pas la librairie Arduino.
+
+Remarque: il utilise l'abréviation 0b 00001001 , mais il n'est pas clair de savoir quelle est la librairie qui a été importée pour pouvoir le faire. En général le fichier ledmatrix.h est assez mystérieux. 
+
+####### LedPong #######
+http://tetalab.org/blog/13
+http://tetalab.org/blog/19
+Le projet du Tetalab. Ils utilsent un arduino. Il doivent envoyer des commandes par le port série de l'arduino, et l'arduino doit commander l'afficheur avec une sortie I2C.
+C'est ce qui est sur le schéma, malheureusement il n'a pas encore été possible de trouver le code qui a été écrit. 
