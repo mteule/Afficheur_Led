@@ -1,3 +1,7 @@
+####### Coloration des caractères imprimés dans un shell: #######
+http://stackoverflow.com/questions/3219393/stdlib-and-colored-output-in-c
+Une discussion de Stack Overflow qui explique rapidement et clairement comment il sera possible d'afficher les caractères en couleur.
+
 
 RAPPELS:
 .......§	=1
