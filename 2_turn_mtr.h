@@ -1,3 +1,6 @@
+#ifndef TURN_MTR_H
+#define TURN_MTR_H
+
 #include <inttypes.h>	// uint8_t
 #include <string.h>
 #include "1_dim_afficheur.h"
@@ -34,3 +37,5 @@ void turn_mtr
 	uint8_t matrice_affichable[NB_LIGN][NB_CASES],
 	uint8_t mtr_vertcl[LARGEUR_CASE * NB_CASES]
 );
+
+#endif
