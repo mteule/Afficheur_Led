@@ -1,4 +1,13 @@
+####### Coloration des caractères imprimés dans un shell: #######
+http://stackoverflow.com/questions/3219393/stdlib-and-colored-output-in-c
+Une discussion de Stack Overflow qui explique rapidement et clairement comment il sera possible d'afficher les caractères en couleur.
 
+####### caractères échappement du terminal #######
+http://stackoverflow.com/questions/1348563/clearing-output-of-a-terminal-program-linux-c-c
+http://en.wikipedia.org/wiki/ANSI_escape_code
+
+
+#####################################################
 RAPPELS:
 .......§	=1
 ......§.	=2
