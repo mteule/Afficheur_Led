@@ -7,6 +7,14 @@ http://stackoverflow.com/questions/1348563/clearing-output-of-a-terminal-program
 http://en.wikipedia.org/wiki/ANSI_escape_code
 Ce sont les caractères qui vont permettre de nettoyer l'écran ou de remonter de quelques lignes afin d'obtenir un défilement des caractères qui sont affichés. 
 
+####### Utiliser plusieurs fichiers en C dans un sketch arduino #######
+Sur la documentation arduino ils disent que cela est prévu dans le menu:
+'Onglets, fichiers multiples et compilation'
+http://arduino.cc/fr/Main/DebuterPresentationLogiciel
+
+Ici un article en fgrançais sur comment se passer de l'IDE:
+'Programmation Arduino en ligne de commande'
+http://www.francoistessier.info/blog/2011/07/06/programmation-arduino-en-ligne-de-commande/
 
 #####################################################
 RAPPELS:
