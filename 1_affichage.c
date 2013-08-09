@@ -41,6 +41,7 @@ void affichage
 	uint8_t matrice_affichable[NB_LIGN][NB_CASES]
 )
 {
+	printf(ANSI_COLOR_CYAN);
 	for (uint8_t i =0; i <NB_LIGN; i++)
 	{
 		ecrire_ligne( 
@@ -50,4 +51,5 @@ void affichage
 		// retour à la ligne
 		printf("\n");
 	}
+		printf(ANSI_COLOR_RESET);
 }
