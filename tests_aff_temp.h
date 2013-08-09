@@ -11,5 +11,6 @@
 
 void test_all_aff_temp();
 
+void test_attendre();
 
 #endif
