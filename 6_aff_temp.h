@@ -12,6 +12,7 @@
 // http://stackoverflow.com/questions/1157209/is-there-an-alternative-sleep-function-in-c-to-milliseconds
 // http://www.siteduzero.com/informatique/tutoriels/apprenez-a-programmer-en-c/utilisation-d-une-structure
 // http://man7.org/linux/man-pages/man2/nanosleep.2.html
+// http://man7.org/linux/man-pages/man3/usleep.3.html
 
 // Afficher
 
