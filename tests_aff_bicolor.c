@@ -9,11 +9,63 @@ void test_all_aff_bicolor()
 void test_init_mtr_bicolor()
 {
 	printf("Test de la fonction test_init_mtr_bicolor()\n");
-	uint8_t mtr[NB_LIGN][NB_CASES][NB_COLOR] = {0};
-	init_mtr_bicolor(mtr);
-	aff_bicolor(mtr);
+	uint8_t mtr_bicolor[NB_LIGN][NB_CASES][NB_COLOR] = {0};
+	init_mtr_bicolor(mtr_bicolor);
+	aff_bicolor(mtr_bicolor);
+	printf( "\n");
+	
+	// mtr_bicolor = {0};
+	aff_bicolor(mtr_bicolor);
+	printf( "\n");	
+
+	uint8_t mtr_vertcl[LARGEUR_CASE * NB_CASES] = {0};
+	init_mtr_labx_vert(mtr_vertcl);
+	turn_mtr_bicolor
+	(
+		mtr_bicolor,
+		mtr_vertcl,
+		mtr_vertcl
+	);
+	aff_bicolor(mtr_bicolor);
 	printf( "\nça passe!\n\n");
+	
+	// Initialise un tableau de conversion
+	uint8_t mtr_font5x7 [480];
+	init_font5x7(mtr_font5x7);
+	uint8_t mtr_vertcl_rouge[LARGEUR_CASE * NB_CASES] = {0};
+	uint8_t mtr_vertcl_verte[LARGEUR_CASE * NB_CASES] = {0};
+		
+	// Initialise les chaînes de caractères
+	char phrase_rouge[8]= {'l', ' ', 'b', 'x', '.', 'f', ' ', ' '};
+	char phrase_verte[8]= {' ', 'a', 'b', 'x', '.', ' ', 'r', ' '};
+	uint8_t n=8;
+	
+	transcrire_String_to_LedMatrix_n
+	(
+		phrase_rouge,
+		mtr_vertcl_rouge,
+		n,
+		mtr_font5x7
+	);
+	transcrire_String_to_LedMatrix_n
+	(
+		phrase_verte,
+		mtr_vertcl_verte,
+		n,
+		mtr_font5x7
+	);
+
+	turn_mtr_bicolor
+	(
+		mtr_bicolor,
+		mtr_vertcl_rouge,
+		mtr_vertcl_verte
+	);
+	aff_bicolor(mtr_bicolor);
+	printf( "\nça passe!\n\n");	
+
 }
+
 void test_ledsegment_color()
 {
 	printf("Test de la fonction init_ledsegment_color()\n");

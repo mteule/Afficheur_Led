@@ -4,6 +4,8 @@
 #include "1_affichage.h"
 #include "1_dim_afficheur.h"
 #include "4_aff_bicolor.h"
+#include "tests_turn_mtr.h"
+#include "tests_conv_char.h" 
 
 #include <inttypes.h>
 
